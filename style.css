@@ -1,0 +1,211 @@
+/* Stylize footer */
+footer {
+  width: 100%;
+  background: #4d8dd6;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0 8px 0;
+  font-size: 0.95rem;
+  font-family: 'Intel One Mono', monospace;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -2px 8px rgba(64,127,200,0.08);
+  margin-top: 24px;
+  border-radius: 20px;
+}
+@media (max-width: 800px) {
+  .image-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 80vh;
+    height: 80vh;
+    padding: 24px 0;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .image-box {
+    width: 95vw;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    max-height: 250px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .image-box p {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 250px;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+  }
+}
+/* Stylize timeline headings */
+h2 {
+  font-size: 1.6rem;
+  color: #2a4d7a;
+  margin: 18px 0 4px 0;
+  text-align: center;
+  font-family: 'Intel One Mono', monospace;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(64,127,200,0.08);
+}
+
+h3 {
+  font-size: 1.15rem;
+  color: #407fc8;
+  margin: 0 0 12px 0;
+  text-align: center;
+  font-family: 'Intel One Mono', monospace;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 4px rgba(64,127,200,0.06);
+}
+/* Add your CSS here */
+body {
+  font-family: 'Intel One Mono', monospace;
+  margin: 8px;
+  padding: 5px;
+  background-color: #ffffff;
+  
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #407fc8;
+  text-align: center;
+  margin: 10px 0 8px 0;
+  font-family: 'Intel One Mono', monospace;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #3797c7;
+  text-align: center;
+  margin: 0 0 24px 0;
+  font-family: 'Intel One Mono', monospace;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;;
+  border-radius: 10px;
+  padding: 16px 12px;
+  box-shadow: 0 2px 8px rgba(64,127,200,0.08);
+}
+
+/* Make all images the same size */
+img {
+  width: 600px; /* Set the width of all images */
+  height: 375px; /* Set the height of all images */
+  object-fit: auto; /* Crop images to fit the box */
+  border-radius: 16px; /* Optional: Add rounded corners to images */
+  padding: 10px;
+  margin: -10px;
+  box-shadow: 0 2px 8px rgba(32, 71, 115, 0.12);
+  transition: box-shadow 0.3s, transform 0.3s;
+/* Exclude header images from the global image styles */
+}
+header img {
+  width: 100px;
+  height: auto;
+  object-fit: unset;
+  background-color: rgb(70, 167, 236);
+  padding: 15px;
+  margin: -10px;
+}
+
+/* Container for horizontal scrolling of images */
+.image-scroll {
+  display: flex; /* Arrange images in a row */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 16px; /* Space between images */
+  padding: 16px 0;
+  scrollbar-width: auto; /* Show scrollbar in Firefox */
+  scroll-snap-type: x mandatory; /* Enable horizontal scroll snap */
+}
+
+.image-scroll > div {
+  scroll-snap-align: start; /* Snap each image container to start */
+}
+
+
+/* Optional: Style the scrollbar for Webkit browsers */
+.image-scroll::-webkit-scrollbar {
+  height: 12px;
+}
+.image-scroll::-webkit-scrollbar-thumb {
+  background: #407fc8;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(64,127,200,0.25);
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.image-scroll::-webkit-scrollbar-thumb:hover {
+  background: #2a4d7a;
+  box-shadow: 0 4px 16px rgba(64,127,200,0.35);
+  transform: scaleY(1.2);
+}
+
+/* Show description only when hovering over image-box */
+.image-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer; /* Show pointer cursor on hover for better UX */
+}
+
+
+.image-box p {
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  top: -5;
+  right: 5;
+  width: 600px;
+  height: 375px;
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  color: #2e8afa;
+  margin: 0;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  text-align: center;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+
+
+.image-box:hover img {
+  box-shadow: 0 8px 32px rgba(64,127,200,0.25), 0 2px 8px rgba(64,127,200,0.12);
+}
+.image-box p {
+  /* ...existing code... */
+  transition: opacity 0.7s;
+  transition-timing-function: ease-out;
+}
+
+.image-box:hover p {
+  opacity: 0.95;
+  transition-timing-function: ease-in;
+}
+
