@@ -24,12 +24,9 @@ body {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
 </head>
 <body>
-
   <!-- Language Switcher for Accessibility -->
-  <div class="container my-3" aria-label="Language Switcher">
+  <div class="container my-3" aria-label="Accessibility Controls">
     <div class="d-flex justify-content-end gap-2 flex-wrap">
-      <button class="btn btn-outline-primary" id="lang-en" aria-label="Switch to English" type="button">English</button>
-      <button class="btn btn-outline-primary" id="lang-ar" aria-label="التبديل إلى العربية" type="button">العربية</button>
       <button class="btn btn-outline-dark" id="contrast-toggle" aria-label="Toggle high contrast mode" type="button">
         <i class="bi bi-circle-half"></i> High Contrast
       </button>
@@ -54,8 +51,21 @@ body {
   </header>
 
   <!-- Timeline Cards Section -->
-    <!-- Horizontal scroll container for timeline images -->
-      <div class="image-scroll">
+    <!-- Bootstrap Carousel for timeline images with indicators -->
+    <div id="timelineCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
           <div>
             <h2>1968</h2>
             <h3 data-translate="Intel Founded">Intel Founded</h3>
@@ -64,6 +74,8 @@ body {
               <p data-translate="Intel Founded Desc">Robert Noyce and Gordon Moore rename the newly formed company NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation.</p>
             </div>
           </div>
+        </div>
+        <div class="carousel-item">
           <div>
             <h2>1971</h2>
             <h3 data-translate="First Microprocessor">First Microprocessor</h3>
@@ -72,6 +84,8 @@ body {
               <p data-translate="First Microprocessor Desc">Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution and propelling the future of computing devices.</p>
             </div>
           </div>
+        </div>
+        <div class="carousel-item">
           <div>
             <h2>1978</h2>
             <h3 data-translate="8086 Processor">8086 Processor</h3>
@@ -80,6 +94,8 @@ body {
               <p data-translate="8086 Processor Desc">Launch of the 8086 processor, establishing the x86 architecture that drives countless PCs and servers in the modern era.</p>
             </div>
           </div>
+        </div>
+        <div class="carousel-item">
           <div>
             <h2>1985</h2>
             <h3 data-translate="386 Processor">386 Processor</h3>
@@ -88,6 +104,8 @@ body {
               <p data-translate="386 Processor Desc">Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.</p>
             </div>
           </div>
+        </div>
+        <div class="carousel-item">
           <div>
             <h2>2006</h2>
             <h3 data-translate="Peak GHG Emissions">Peak GHG Emissions</h3>
@@ -96,6 +114,8 @@ body {
               <p data-translate="Peak GHG Emissions Desc">This year marks Intel's highest annual greenhouse gas emissions for operations. Over subsequent years, Intel invests heavily in chemical abatement, renewable energy, and energy-efficient manufacturing to reverse this trend.</p>
             </div>
           </div>
+        </div>
+        <div class="carousel-item">
           <div>
             <h2>2020</h2>
             <h3 data-translate="RISE Strategy">RISE Strategy</h3>
@@ -104,6 +124,8 @@ body {
               <p data-translate="RISE Strategy Desc">Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals, aiming to drive industry-wide progress on climate action, water stewardship, and waste reduction.</p>
             </div>
           </div>
+        </div>
+        <div class="carousel-item">
           <div>
             <h2>2022</h2>
             <h3 data-translate="Net-Zero By 2040">Net-Zero By 2040</h3>
@@ -112,6 +134,8 @@ body {
               <p data-translate="Net-Zero By 2040 Desc">Intel announces its commitment to achieve net-zero greenhouse gas emissions (Scope 1 and 2) across its global operations by 2040, building on years of environmental initiatives.</p>
             </div>
           </div>
+        </div>
+        <div class="carousel-item">
           <div>
             <h2>2023</h2>
             <h3 data-translate="Renewable Electricity">Renewable Electricity</h3>
@@ -120,6 +144,8 @@ body {
               <p data-translate="Renewable Electricity Desc">The company achieves 99% renewable electricity usage worldwide, helping to drastically lower carbon emissions and driving progress toward Intel's long-term sustainability goals.</p>
             </div>
           </div>
+        </div>
+        <div class="carousel-item">
           <div>
             <h2>2024</h2>
             <h3 data-translate="Sustainability Summit">Sustainability Summit</h3>
@@ -128,7 +154,17 @@ body {
               <p data-translate="Sustainability Summit Desc">Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing.</p>
             </div>
           </div>
+        </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#timelineCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#timelineCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
 
       <!-- Bootstrap Grid for Columns -->
@@ -215,8 +251,9 @@ body {
     </div>
   </footer>
 </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// High contrast accessibility toggle
+// High contrast accessibility toggle only
 function setHighContrast(enabled) {
   if (enabled) {
     document.body.classList.add('high-contrast');
@@ -228,14 +265,26 @@ function setHighContrast(enabled) {
 window.addEventListener('DOMContentLoaded', function() {
   const contrastBtn = document.getElementById('contrast-toggle');
   let contrastOn = false;
-  contrastBtn.addEventListener('click', function() {
-    contrastOn = !contrastOn;
-    setHighContrast(contrastOn);
-    contrastBtn.classList.toggle('btn-warning', contrastOn);
-    contrastBtn.classList.toggle('btn-outline-dark', !contrastOn);
-    contrastBtn.setAttribute('aria-pressed', contrastOn);
-  });
+  if (contrastBtn) {
+    contrastBtn.addEventListener('click', function() {
+      contrastOn = !contrastOn;
+      setHighContrast(contrastOn);
+      contrastBtn.classList.toggle('btn-warning', contrastOn);
+      contrastBtn.classList.toggle('btn-outline-dark', !contrastOn);
+      contrastBtn.setAttribute('aria-pressed', contrastOn);
+    });
+  }
 });
+// High contrast accessibility toggle
+function setHighContrast(enabled) {
+  if (enabled) {
+    document.body.classList.add('high-contrast');
+  } else {
+    document.body.classList.remove('high-contrast');
+  }
+}
+
+
 // RTL/LTR logic: switch direction and Bootstrap RTL CSS when translated
 function setDirectionForLang(lang) {
   const rtlLink = document.getElementById('bootstrap-rtl');
@@ -340,4 +389,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 </script>
+</script>
+<script src="interact.js"></script>
 </html>

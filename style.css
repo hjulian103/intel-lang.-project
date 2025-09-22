@@ -1,3 +1,88 @@
+/* Custom carousel arrow icon color only */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(38%) sepia(77%) saturate(747%) hue-rotate(181deg) brightness(95%) contrast(92%);
+  /* #407fc8 blue */
+  background-color: transparent !important;
+  border-radius: 0;
+  width: 2rem;
+  height: 2rem;
+  transition: filter 0.2s;
+}
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover,
+.carousel-control-prev-icon:focus,
+.carousel-control-next-icon:focus {
+  filter: invert(81%) sepia(77%) saturate(747%) hue-rotate(1deg) brightness(105%) contrast(101%);
+  /* #ffc107 gold */
+}
+/* Custom carousel indicator colors (override Bootstrap) */
+.carousel-indicators [data-bs-target] {
+  background-color: #407fc8 !important;
+  border: 2px solid #ffffff !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  opacity: 0.6 !important;
+  transition: opacity 0.2s, background 0.2s !important;
+}
+.carousel-indicators .active {
+  background-color: #ffffff !important;
+  border-color: #407fc8 !important;
+  opacity: 1 !important;
+}
+
+.carousel-control-prev, .carousel-control-next {
+}
+/* Fixed position for high contrast button */
+#contrast-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+  box-shadow: 0 2px 8px rgba(32, 71, 115, 0.18);
+}
+/* High Contrast Accessibility Mode */
+body.high-contrast, body.high-contrast .container, body.high-contrast .card, body.high-contrast .card-body, body.high-contrast .footer, body.high-contrast .image-box p {
+  background: #000 !important;
+  color: #fff !important;
+}
+body.high-contrast header h1,
+body.high-contrast header p,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast .card-title,
+body.high-contrast .card-text,
+body.high-contrast .nav-link,
+body.high-contrast .btn,
+body.high-contrast .btn-primary,
+body.high-contrast .btn-outline-primary,
+body.high-contrast .btn-outline-dark,
+body.high-contrast .btn-warning {
+  color: #fff !important;
+  background: #111 !important;
+  border-color: #fff !important;
+  text-shadow: none !important;
+}
+body.high-contrast .btn-warning {
+  background: #ffc107 !important;
+  color: #000 !important;
+  border-color: #ffc107 !important;
+}
+body.high-contrast .image-box p {
+  background: #111 !important;
+  color: #fff !important;
+}
+body.high-contrast footer {
+  background: #000 !important;
+  color: #fff !important;
+  border-radius: 20px;
+}
+body.high-contrast .form-control {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
 /* High Contrast Accessibility Mode */
 body.high-contrast, body.high-contrast .container, body.high-contrast .card, body.high-contrast .card-body, body.high-contrast .footer, body.high-contrast .image-box p {
   background: #000 !important;
@@ -200,8 +285,8 @@ header img {
   background-color: rgb(70, 167, 236);
   position: absolute;
   top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 50px;
+  transform: translateX(-50px);
   margin: 0;
   z-index: 10;
 }
