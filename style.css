@@ -32,13 +32,12 @@
   opacity: 1 !important;
 }
 
-.carousel-control-prev, .carousel-control-next {
-}
+
 /* Fixed position for high contrast button */
 #contrast-toggle {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 5px;
+  right: 5px;
   z-index: 1050;
   box-shadow: 0 2px 8px rgba(32, 71, 115, 0.18);
 }
@@ -59,9 +58,9 @@ body.high-contrast .btn-primary,
 body.high-contrast .btn-outline-primary,
 body.high-contrast .btn-outline-dark,
 body.high-contrast .btn-warning {
-  color: #fff !important;
-  background: #111 !important;
-  border-color: #fff !important;
+  color: #ffffff !important;
+  background: #000000 !important;
+  border-color: #ffffff !important;
   text-shadow: none !important;
 }
 body.high-contrast .btn-warning {
@@ -106,9 +105,14 @@ body.high-contrast .btn-warning {
   text-shadow: none !important;
 }
 body.high-contrast .btn-warning {
-  background: #ffc107 !important;
-  color: #000 !important;
-  border-color: #ffc107 !important;
+  background: #ffffff !important;
+  color: #3590f1 !important;
+  border-color: #ffffff !important;
+  @media (max-width: 600px) {
+    width: 40px;
+    right: -60px;
+    height: 40px;
+  }
 }
 body.high-contrast .image-box p {
   background: #111 !important;
@@ -142,19 +146,33 @@ footer {
   border-radius: 20px;
 }
 @media (max-width: 800px) {
-  .image-scroll {
+  /* Make carousel scroll vertically on small screens */
+  #timelineCarousel .carousel-inner {
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    align-items: center;
     overflow-y: auto;
-    overflow-x: hidden;
     max-height: 80vh;
     height: 80vh;
-    padding-block: 24px;
-    width: 100vw;
-    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
   }
+  #timelineCarousel .carousel-item {
+    flex: 0 0 auto;
+    width: 100% !important;
+    min-height: 350px;
+    scroll-snap-align: start;
+    margin-bottom: 16px;
+    transition: none !important;
+    display: block !important;
+    opacity: 1 !important;
+    position: static !important;
+  }
+  /* Hide carousel controls and indicators on small screens */
+  #timelineCarousel .carousel-control-prev,
+  #timelineCarousel .carousel-control-next,
+  #timelineCarousel .carousel-indicators {
+    display: none !important;
+  }
+  /* Adjust image and box sizes for vertical scroll */
   .image-box {
     width: 95vw;
     max-width: 98vw;
@@ -279,16 +297,25 @@ img {
 /* Exclude header images from the global image styles */
 }
 header img {
-  width: 125px;
+  width: 150px;
   height: auto;
   object-fit: unset;
   background-color: rgb(70, 167, 236);
   position: absolute;
-  top: 16px;
+  top: 5px;
   left: 50px;
   transform: translateX(-50px);
   margin: 0;
   z-index: 10;
+}
+
+@media (max-width: 600px) {
+  header img {
+    width: 65px;
+    left: 10px;
+    top: 5px;
+    transform: translateX(0);
+  }
 }
 
 /* Container for horizontal scrolling of images */
