@@ -1,3 +1,47 @@
+/* High Contrast Accessibility Mode */
+body.high-contrast, body.high-contrast .container, body.high-contrast .card, body.high-contrast .card-body, body.high-contrast .footer, body.high-contrast .image-box p {
+  background: #000 !important;
+  color: #fff !important;
+}
+body.high-contrast header h1,
+body.high-contrast header p,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast .card-title,
+body.high-contrast .card-text,
+body.high-contrast .nav-link,
+body.high-contrast .btn,
+body.high-contrast .btn-primary,
+body.high-contrast .btn-outline-primary,
+body.high-contrast .btn-outline-dark,
+body.high-contrast .btn-warning {
+  color: #fff !important;
+  background: #111 !important;
+  border-color: #fff !important;
+  text-shadow: none !important;
+}
+body.high-contrast .btn-warning {
+  background: #ffc107 !important;
+  color: #000 !important;
+  border-color: #ffc107 !important;
+}
+body.high-contrast .image-box p {
+  background: #111 !important;
+  color: #fff !important;
+}
+body.high-contrast footer {
+  background: #000 !important;
+  color: #fff !important;
+  border-radius: 20px;
+}
+body.high-contrast .form-control {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+/* Import Bootstrap LTR and RTL for direction switching */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-rtl@5.3.8/dist/css/bootstrap-rtl.min.css');
 /* Stylize footer */
 footer {
   width: 100%;
@@ -22,7 +66,7 @@ footer {
     overflow-x: hidden;
     max-height: 80vh;
     height: 80vh;
-    padding: 24px 0;
+    padding-block: 24px;
     width: 100vw;
     box-sizing: border-box;
   }
@@ -51,6 +95,36 @@ footer {
     top: 0;
     box-sizing: border-box;
   }
+}
+
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header p {
+    font-size: 1rem;
+    padding: 8px 4px;
+  }
+  img, .image-box p {
+    max-width: 98vw;
+    width: 98vw;
+    font-size: 1rem;
+  }
+  .card-body {
+    padding: 0.5rem;
+  }
+}
+
+
+/* Use logical properties for RTL/LTR support */
+
+
+/* Example: align text and icons using start/end for direction compatibility */
+
+/* Responsive grid for timeline and cards */
+.container, .container-fluid {
+  max-width: 100vw;
+  padding-inline: 1rem;
 }
 /* Stylize timeline headings */
 h2 {
@@ -120,12 +194,16 @@ img {
 /* Exclude header images from the global image styles */
 }
 header img {
-  width: 100px;
+  width: 125px;
   height: auto;
   object-fit: unset;
   background-color: rgb(70, 167, 236);
-  padding: 15px;
-  margin: -10px;
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 10;
 }
 
 /* Container for horizontal scrolling of images */
@@ -182,7 +260,7 @@ header img {
   width: 600px;
   height: 375px;
   background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
-  color: #2e8afa;
+  color: #1077f4;
   margin: 0;
   border-radius: 8px;
   font-size: 1.5rem;
@@ -208,4 +286,3 @@ header img {
   opacity: 0.95;
   transition-timing-function: ease-in;
 }
-
